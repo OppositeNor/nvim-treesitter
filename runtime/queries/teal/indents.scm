@@ -1,5 +1,6 @@
 [
   (record_declaration)
+  (interface_declaration)
   (anon_function)
   (function_body)
   (table_constructor)

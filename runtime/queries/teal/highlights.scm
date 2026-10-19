@@ -83,6 +83,9 @@
 (record_declaration
   "global" @keyword)
 
+(interface_declaration
+  "global" @keyword)
+
 (enum_declaration
   "global" @keyword)
 
@@ -168,6 +171,13 @@
     name: (identifier) @type))
 
 (record_body
+  (interface_declaration
+    .
+    "interface" @keyword.type
+    .
+    name: (identifier) @type))
+
+(record_body
   (enum_declaration
     .
     "enum" @keyword.type
@@ -188,6 +198,52 @@
     "metamethod" @keyword))
 
 (record_body
+  (userdata) @keyword)
+
+(interface_declaration
+  .
+  "interface" @keyword.type
+  name: (identifier) @type)
+
+(anon_interface
+  .
+  "interface" @keyword.type)
+
+(interface_body
+  (record_declaration
+    .
+    "record" @keyword.type
+    .
+    name: (identifier) @type))
+
+(interface_body
+  (interface_declaration
+    .
+    "interface" @keyword.type
+    .
+    name: (identifier) @type))
+
+(interface_body
+  (enum_declaration
+    .
+    "enum" @keyword.type
+    .
+    name: (identifier) @type))
+
+(interface_body
+  (typedef
+    .
+    "type" @keyword
+    .
+    name: (identifier) @type
+    .
+    "="))
+
+(interface_body
+  (metamethod
+    "metamethod" @keyword))
+
+(interface_body
   (userdata) @keyword)
 
 (enum_declaration
